@@ -1,15 +1,145 @@
 <style>
+  body {
+    background-color: navy;
+  }
     h1 {
-        color: #3498db;
-        font-family: sans-serif; 
+        color: white;
+        font-family: Fantasy; 
         text-align: center;
     }
+    h3 {
+        color: orange;
+        font-family: Fantasy; 
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        font-family: Fantasy;
+      color: white;
+    }
+  /*FYI: I USED A WEBSITE TO HELP ME MAKE THESE SWITCHES. HERE IS MY SOURCE: https://www.w3schools.com/howto/howto_css_switch.asp*/
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+    }
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+    .slider.round {
+        border-radius: 34px;
+    }
+    .slider.round:before {
+        border-radius: 50%;
+    }
+    img {
+        display: none; 
+        margin-top: 10px;
+        max-width: 300px; 
+        max-height: 200px;
+        width: auto; 
+        height: auto;
+    }
 </style>
-
-
-<h1>Hello welcome to my site</h1>
+</head>
+<body>
+<h1>This is my first website</h1>
+<h3>Matthew Geiling</h3>
 <p>
-  This is a sick website. <a href="https://mets.com"> Click here</a>
+   Using the switches below, I will reveal some important parts of my identity, hobbies, and general interests -- and most importantly, show off my new-found coding skills.
 </p>
 
-<imng src="https://people.com/thmb/RssmFjlYfpnOsI7GLi6FFVBXjs0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(794x249:796x251):format(webp)/francisco-lindor-1-6a2735abb4794512a0ff7e582bd9cf86.jpg" alt="lindor mets"></imng>
+<!-- Switches and Images -->
+<div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/New_York_Mets.svg/1200px-New_York_Mets.svg.png" alt="Image 1">
+</div>
+<div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://images.squarespace-cdn.com/content/v1/62015f66f840ef671da14ae7/4161edfa-ebba-4c13-90a4-90383f26260e/Photographing-NYC-skyline.jpg" alt="Image 2">
+</div>
+<div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Chess_board_opening_staunton.jpg" alt="Image 3">
+</div>
+<div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://i0.wp.com/cascadescasinokamloops.com/wp-content/uploads/2021/01/Homepage-GamingPage-PokerImage-scaled.jpg?fit=2560%2C1787&ssl=1" alt="Image 4">
+</div>
+<div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://m.media-amazon.com/images/M/MV5BNmQ0ODBhMjUtNDRhOC00MGQzLTk5MTAtZDliODg5NmU5MjZhXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg" alt="Image 5">
+</div>
+  <div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://media.cnn.com/api/v1/images/stellar/prod/i-stock-1287493837-1.jpg?c=16x9" alt="Image 6">
+</div>
+  <div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://www.rd.com/wp-content/uploads/2022/04/GettyImages-1140602972-e1651249657746.jpg?fit=700,467" alt="Image 7">
+</div>
+  <div>
+    <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider round"></span>
+    </label>
+    <img src="https://img.money.com/2022/05/News-Plunging-Stocks-401k.jpg" alt="Image 8">
+</div>
+<!--FYI: I used GPT to help me make this script. I have included our conversations on Canvas-->
+<script>
+document.querySelectorAll('.toggle').forEach(function(toggle, index) {
+    toggle.addEventListener('change', function() {
+        var image = this.parentNode.nextElementSibling;
+        image.style.display = this.checked ? 'block' : 'none';
+    });
+});
+</script>
+</body>
